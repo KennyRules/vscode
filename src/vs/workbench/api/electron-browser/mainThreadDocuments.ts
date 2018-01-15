@@ -181,7 +181,7 @@ export class MainThreadDocuments implements MainThreadDocumentsShape {
 		let promise: TPromise<boolean>;
 		switch (uri.scheme) {
 			case 'untitled':
-				promise = this._handleUnititledScheme(uri);
+				promise = this._handleUntitledScheme(uri);
 				break;
 			case 'file':
 			default:
@@ -211,10 +211,10 @@ export class MainThreadDocuments implements MainThreadDocumentsShape {
 		});
 	}
 
-	private _handleUnititledScheme(uri: URI): TPromise<boolean> {
+	private _handleUntitledScheme(uri: URI): TPromise<boolean> {
 		let asFileUri = uri.with({ scheme: 'file' });
 		return this._fileService.resolveFile(asFileUri).then(stats => {
-			// don't create a new file ontop of an existing file
+			// don't create a new file on top of an existing file
 			return TPromise.wrapError<boolean>(new Error('file already exists on disk'));
 		}, err => this._doCreateUntitled(asFileUri).then(resource => !!resource));
 	}

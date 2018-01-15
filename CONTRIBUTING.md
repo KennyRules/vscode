@@ -37,7 +37,6 @@ If you find your issue already exists, make relevant comments and add your [reac
 * 👍 - upvote
 * 👎 - downvote
 
-
 If you cannot find an existing issue that describes your bug or feature, create a new issue using the guidelines below.
 
 ### Writing Good Bug Reports and Feature Requests
@@ -100,4 +99,3 @@ please see [How to Contribute](https://github.com/Microsoft/vscode/wiki/How-to-C
 # Thank You!
 
 Your contributions to open source, large or small, make great projects like this possible. Thank you for taking the time to contribute.
-

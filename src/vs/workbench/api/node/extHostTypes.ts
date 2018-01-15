@@ -816,7 +816,7 @@ export class CodeAction {
 
 	edit?: WorkspaceEdit;
 
-	dianostics?: Diagnostic[];
+	diagnostics?: Diagnostic[];
 
 	constructor(title: string, edit?: WorkspaceEdit) {
 		this.title = title;

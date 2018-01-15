@@ -134,7 +134,7 @@ export interface MainThreadDialogSaveOptions {
 	filters?: { [name: string]: string[] };
 }
 
-export interface MainThreadDiaglogsShape extends IDisposable {
+export interface MainThreadDialogsShape extends IDisposable {
 	$showOpenDialog(options: MainThreadDialogOpenOptions): Thenable<string[]>;
 	$showSaveDialog(options: MainThreadDialogSaveOptions): Thenable<string>;
 }
@@ -281,7 +281,7 @@ export interface MainThreadLanguageFeaturesShape extends IDisposable {
 	$registerOutlineSupport(handle: number, selector: vscode.DocumentSelector): void;
 	$registerCodeLensSupport(handle: number, selector: vscode.DocumentSelector, eventHandle: number): void;
 	$emitCodeLensEvent(eventHandle: number, event?: any): void;
-	$registerDeclaractionSupport(handle: number, selector: vscode.DocumentSelector): void;
+	$registerDeclarationSupport(handle: number, selector: vscode.DocumentSelector): void;
 	$registerImplementationSupport(handle: number, selector: vscode.DocumentSelector): void;
 	$registerTypeDefinitionSupport(handle: number, selector: vscode.DocumentSelector): void;
 	$registerHoverProvider(handle: number, selector: vscode.DocumentSelector): void;
@@ -746,7 +746,7 @@ export const MainContext = {
 	MainThreadDebugService: createMainId<MainThreadDebugServiceShape>('MainThreadDebugService'),
 	MainThreadDecorations: createMainId<MainThreadDecorationsShape>('MainThreadDecorations'),
 	MainThreadDiagnostics: createMainId<MainThreadDiagnosticsShape>('MainThreadDiagnostics'),
-	MainThreadDialogs: createMainId<MainThreadDiaglogsShape>('MainThreadDiaglogs'),
+	MainThreadDialogs: createMainId<MainThreadDialogsShape>('MainThreadDiaglogs'),
 	MainThreadDocuments: createMainId<MainThreadDocumentsShape>('MainThreadDocuments'),
 	MainThreadDocumentContentProviders: createMainId<MainThreadDocumentContentProvidersShape>('MainThreadDocumentContentProviders'),
 	MainThreadEditors: createMainId<MainThreadEditorsShape>('MainThreadEditors'),

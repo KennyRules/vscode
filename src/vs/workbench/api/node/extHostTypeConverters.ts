@@ -96,7 +96,7 @@ export function fromDiagnosticSeverity(value: number): Severity {
 	return Severity.Error;
 }
 
-export function toDiagnosticSeverty(value: Severity): types.DiagnosticSeverity {
+export function toDiagnosticSeverity(value: Severity): types.DiagnosticSeverity {
 	switch (value) {
 		case Severity.Info:
 			return types.DiagnosticSeverity.Information;
@@ -426,7 +426,7 @@ export namespace Suggest {
 		}
 		result.range = new types.Range(startPosition, endPosition);
 
-		// 'inserText'-logic
+		// 'insertText'-logic
 		if (suggestion.snippetType === 'textmate') {
 			result.insertText = new types.SnippetString(suggestion.insertText);
 		} else {
